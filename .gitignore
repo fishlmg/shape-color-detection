@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+venv/
+.venv/
+
+# 环境变量与密钥
+.env
+.env.*
+
+# 模型权重（保留在本地，不入库）
+*.pth
+*.pt
+*.onnx
+*.pkl
+
+# 数据集图片（117M，保留在本地）
+images/
+
+.DS_Store
