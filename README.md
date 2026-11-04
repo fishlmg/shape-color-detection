@@ -1,10 +1,24 @@
 # 形状与颜色检测
 
+几何形状识别项目：自动生成**合成数据集**，用 PyTorch 训练形状分类模型，并提供 PyTorch 与 ONNX Runtime 两种推理方式；同时包含基于 OpenCV 传统视觉（HSV 阈值 + 轮廓分析）的形状/颜色检测方案。
+
+Shape and color detection with synthetic data: an OpenCV HSV-and-contour pipeline, plus a PyTorch CNN with ONNX Runtime inference.
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-5C3EE8.svg)](https://opencv.org/)
 
-几何形状识别项目：自动生成**合成数据集**，用 PyTorch 训练形状分类模型，并提供 PyTorch 与 ONNX Runtime 两种推理方式；同时包含基于 OpenCV 传统视觉（HSV 阈值 + 轮廓分析）的形状/颜色检测方案。
+## 📷 效果展示
+
+仓库里目前没有已提交的检测结果图。本段是占位，等真实输出放进 `docs/images/` 后再换成图片。
+
+| 想展示的内容 | 建议路径 | 从哪里来 |
+|---|---|---|
+| 合成形状样本（圆 / 三角 / 矩形） | `docs/images/dataset-sample.png` | `python generate_dataset.py` 之后，从本地 `images/train/` 里选图 |
+| 按颜色抠出的轮廓 | `docs/images/color-masks.png` | `python solve.py` 写到本地 `outputs/`（读取仓库外的 `./data/d.png` 与 `shape_model.onnx`） |
+| ONNX 推理标注 | `docs/images/onnx-output.png` | `python onnxinf.py` 生成的本地 `output.png` |
+
+只提交这几张示例。`images/` 数据集和 `.pth` / `.onnx` 权重已在 `.gitignore` 中排除。
 
 ## ✨ 特性
 
@@ -69,6 +83,17 @@ PyTorch、torchvision、OpenCV、ONNX Runtime、NumPy、Matplotlib、Pillow —�
 
 数据集图片（`images/`，约 117MB）与模型权重（`.pth` / `.onnx`）不包含在仓库中（`.gitignore` 已排除），运行生成/训练脚本即可复现。
 
+## 🔗 相关项目
+
+- [opencv-learn](https://github.com/fishlmg/opencv-learn) — OpenCV 基础练习：模糊、轮廓、HSV 分割、模板匹配
+- [gd-vision-competition](https://github.com/fishlmg/gd-vision-competition) — 竞赛向 HSV 颜色检测与二维码识别
+- [cat-dog-classification](https://github.com/fishlmg/cat-dog-classification) — PyTorch CNN 训练、ONNX 导出与 OpenCV 部署
+- [pytorch-learn](https://github.com/fishlmg/pytorch-learn) — PyTorch 笔记：CNN、迁移学习与训练技巧
+
 ## 📄 许可证
 
 [MIT License](LICENSE)
+
+---
+
+作者：[fishlmg](https://github.com/fishlmg)
